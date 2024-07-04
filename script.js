@@ -15,15 +15,13 @@ document.getElementById('check-btn').addEventListener('click', () => {
     errorMessage.textContent = ''; // Clear the error message div
     return;
   }
-  
-    const isValid = validPatterns.some((pattern) => pattern.test(userInput));
-    resultsDiv.textContent = isValid ? `Valid US number: ${userInput}` : `Invalid US number: ${userInput}`;
-    resultsDiv.style.color = isValid ? 'green' : 'red';
-    errorMessage.textContent = '';
-  });
-  
-  document.getElementById('clear-btn').addEventListener('click', () => {
-    document.getElementById('user-input').value = '';
-    document.getElementById('results-div').textContent = '';
-    document.getElementById('error-message').textContent = '';
-  });
+  const isValid = validPatterns.some((pattern) => pattern.test(userInput));
+  resultsDiv.textContent = isValid ? `Valid US number: ${userInput}` : `Invalid US number: ${userInput}`;
+  resultsDiv.style.color = isValid ? 'green' : 'red';
+  errorMessage.textContent = '';
+});
+document.getElementById('clear-btn').addEventListener('click', () => {
+  document.getElementById('user-input').value = '';
+  document.getElementById('results-div').textContent = '';
+  document.getElementById('error-message').textContent = '';
+});
